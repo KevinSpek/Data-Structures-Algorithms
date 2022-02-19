@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 class Tree(ABC):
+    
     def __init__(self):
         self.__root = None
         self.__size = 0
@@ -10,6 +11,9 @@ class Tree(ABC):
     
     def getRoot(self):
         return self.__root
+    
+    def setRoot(self, node):
+        self.__root = node
 
     def preOrder(self):
         temp, res = self.__root, []

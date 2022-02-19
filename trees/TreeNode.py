@@ -23,3 +23,8 @@ class TreeNode:
         
     def setLeft(self, newLeft):
         self.__left = newLeft
+        
+    def isLeaf(self):
+        if self.__left is None and self.__right is None:
+            return True
+        return False
