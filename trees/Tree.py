@@ -14,7 +14,17 @@ class Tree(ABC):
     
     def setRoot(self, node):
         self.__root = node
+        
+    def _inc(self):
+        self.__size += 1
+    
+    def _dec(self):
+        if self.__size > 0:
+            self.__size -= 1
+            
 
+        
+    
     def preOrder(self):
         temp, res = self.__root, []
         def helper(node):
@@ -47,10 +57,10 @@ class Tree(ABC):
         return res
     
     @abstractmethod
-    def insert(self):
+    def insert(self, value):
         pass
     
     @abstractmethod
-    def delete(self):
+    def delete(self, value):
         pass
             
