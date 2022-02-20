@@ -61,6 +61,10 @@ class Tree(ABC):
         pass
     
     @abstractmethod
-    def delete(self, value):
+    def delete(self, value) -> bool:
+        pass
+    
+    @abstractmethod
+    def find(self, value) -> bool:
         pass
             
