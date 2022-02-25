@@ -22,9 +22,6 @@ class Tree(ABC):
         if self.__size > 0:
             self.__size -= 1
             
-
-        
-    
     def preOrder(self):
         temp, res = self.__root, []
         def helper(node):

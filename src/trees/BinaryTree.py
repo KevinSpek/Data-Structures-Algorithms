@@ -1,7 +1,7 @@
 
 
 from trees.Tree import Tree
-from trees.TreeNode import TreeNode
+from nodes.TreeNode import TreeNode
 
 class BinaryTree(Tree):
     
@@ -57,7 +57,6 @@ class BinaryTree(Tree):
         return temp
         
         
-    
     def delete(self, value):
         if len(self) == 0:
             return False
@@ -68,7 +67,6 @@ class BinaryTree(Tree):
                 temp = temp.getLeft()
             elif value > temp.getValue():
                 temp = temp.getRight()
-            
             else:
                 self._dec()
                 if temp.isLeaf():
@@ -90,9 +88,6 @@ class BinaryTree(Tree):
                         replacer.setRight(temp.getRight())
                         replacer.setLeft(temp.getLeft())
                     return True
-                    
-                        
-
                 
                 parent = temp.getParent()
                 if parent.getRight == temp:
@@ -107,7 +102,6 @@ class BinaryTree(Tree):
                     parent.setRight(replacer)
                     replacer.setRight(temp.getRight())
                     replacer.setLeft(temp.getLeft())
-                    
                             
                 else:
                    
@@ -126,6 +120,17 @@ class BinaryTree(Tree):
                 return True
                     
         return False
+    
+    def find(self, value):
+        temp = self.getRoot()
+        while temp is not None and temp.getValue() != value:
+            if value < temp.getValue():
+                temp = temp.getLeft()
+            else:
+                temp = temp.getRight()
+        if temp is None:
+            return False
+        return True
                         
                         
                     
